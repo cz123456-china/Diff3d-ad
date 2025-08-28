@@ -1,7 +1,7 @@
 # Diff3D-AD
 
 ## Usage
-### installation
+### Installation
 pip install requirements.txt
 
 ### Checkpoints
