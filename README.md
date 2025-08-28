@@ -2,7 +2,7 @@
 
 ## Usage
 ### Checkpoints
-The pretrained VQ model for depth (DADA_D.pckl) is in the checkpoints folder. Training the model on depth can be done with train_dada_depth.py. however the proper paths must be set for ImageNet or any other RGB dataset. 
+Due to the large file size, the weights are not uploaded here and will be provided later. The testing and training code is provided here. A more complete version of the code will be released later."
 
 ## Tran 3D
 For training you can use the train_3d.py 
