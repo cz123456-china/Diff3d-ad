@@ -1,6 +1,9 @@
 # Diff3D-AD
 
 ## Usage
+### installation
+pip install requirements.txt
+
 ### Checkpoints
 Due to the large file size, the weights are not uploaded here and will be provided later. The testing and training code is provided here. A more complete version of the code will be released later."
 
