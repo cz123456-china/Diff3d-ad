@@ -68,7 +68,7 @@ def pretraintrain(testing_dataset_loader, args,unet_model,seg_model,data_len,sub
     mvtec_path='/netdisk-3.1/lijunhui/cz/mvtec_3d_anomaly_detection/'
 
 
-    dataset = MVTecDRAEMTestDataset(mvtec_path + obj_name + "/test/*/xyz/",
+    dataset = MVTecDRAEMTRAINDataset1(mvtec_path + obj_name + "/train/*/xyz/",
                                     resize_shape=[img_dim, img_dim],img_size=args["img_size"])
     dataloader = DataLoader(dataset, batch_size=1,
                             shuffle=False, num_workers=0)
@@ -191,7 +191,7 @@ def pretraintrain(testing_dataset_loader, args,unet_model,seg_model,data_len,sub
 
         s=torch.tensor([[image_score_sample,image_score1]])
         s_lib.append(s)
-        s_map = torch.cat([out_mask_averaged_tensor,0.001*out_mask1], dim=0).squeeze().reshape(2, -1).permute(1, 0)
+        s_map = torch.cat([out_mask_averaged_tensor,out_mask1], dim=0).squeeze().reshape(2, -1).permute(1, 0)
         s_map = s_map.detach()
         s_map = s_map.cpu()
         s_map_lib.append(s_map)
@@ -675,7 +675,7 @@ def test(obj_names, mvtec_path, out_path, run_name_base):
 
 
 
-        s_map = torch.cat([out_mask_averaged_tensor,0.001*out_mask1], dim=0).squeeze().reshape(2, -1).permute(1, 0)
+        s_map = torch.cat([out_mask_averaged_tensor,out_mask1], dim=0).squeeze().reshape(2, -1).permute(1, 0)
         s_map=s_map.cpu()
         s_map = torch.tensor(seg_fuser.score_samples(s_map.detach().numpy()))
         s_map = s_map.view(-1,1, 256, 256)
