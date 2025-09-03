@@ -25,8 +25,9 @@ python train_2D.py
 ```
 ## Test 3D-2D Fusion
 To evaluate the final performance of the fused 3D and 2D model, please run:
+```
 python test.py 
-
+```
 **Parameters Description:**
 - \`--checkpoint_3d\`: Path to the trained 3D model checkpoint (.pckl or .pth)
 - \`--checkpoint_2d\`: Path to the trained 2D model checkpoint
