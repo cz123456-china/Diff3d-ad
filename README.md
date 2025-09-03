@@ -23,7 +23,6 @@ Please specify the dataset path(MVTec-3D-RGB), anomaly_source_path(DTD), and out
 ```bash
 python train_2D.py
 ```
-```
 ## Test 3D-2D Fusion
 To evaluate the final performance of the fused 3D and 2D model, please run:
 python test.py 
